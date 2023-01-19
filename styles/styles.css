@@ -3,33 +3,51 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: rgb(39, 36, 36);
+    color: white;
 }
 
 section {
     display: flex;
     width: 100%;
-
+    background-color: rgb(39, 36, 36);
+    color: white;
 }
 
 .available-column {
     width: 50%;
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .chosen-column {
     width: 50%;
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card {
+    width: 300px;
     background-color: white;
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     padding: 1rem;
     margin: 1rem;
     display: flex;
+    cursor: pointer;
 }
+
+.card:hover {
+    transform: translateX(0.5rem);
+    transition: 0.3s;
+
+}
+
+
 
 img {
     width: 100px;
@@ -37,7 +55,10 @@ img {
 
 .card header {
     padding-left: 2rem;
+    background-color: white;
+    color: black;
 }
+
 
 h2 {
     text-align: center;

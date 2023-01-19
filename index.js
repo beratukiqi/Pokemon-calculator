@@ -10,36 +10,43 @@ const availablePokemons = [
     id: 1,
     name: 'Bulbasaur',
     cp: 439,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',
   },
   {
     id: 37,
     name: 'Vulpix',
     cp: 194,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png',
   },
   {
     id: 134,
     name: 'Vaporeon',
     cp: 2469,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png',
   },
   {
     id: 130,
     name: 'Gyarados',
     cp: 2406,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/130.png',
   },
   {
     id: 25,
     name: 'Pikachu',
     cp: 455,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png',
   },
   {
     id: 27,
     name: 'Sandshrew',
     cp: 710,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png',
   },
   {
     id: 52,
     name: 'Meowth',
     cp: 121,
+    imgSrc: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/052.png',
   },
 ];
 const chosenPokemons = [];
@@ -50,12 +57,14 @@ const addToChosenDom = (pokemon) => {
   const pokemonCard = document.createElement('article');
   pokemonCard.classList.add('card'); // För styling
   pokemonCard.innerHTML = `
-                <img src="https://e7.pngegg.com/pngimages/476/159/png-clipart-pokemon-pikachu-pikachu-pokemon-games-pokemon-thumbnail.png" alt="Pikaaaaaaaaaa">
+                <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
                     <header>
                         <h3>${pokemon.name}</h3>
                         <p>${pokemon.cp}</p>
                     </header>`;
-  document.querySelector('.chosen-column').appendChild(pokemonCard); // Lägg till i chosen kolumn i DOM
+  document
+    .querySelector('.chosen-column h2')
+    .insertAdjacentElement('afterend', pokemonCard); // Lägg till i chosen kolumn i DOM
 
   // När vi klickar på ett kort från chosen listan
   pokemonCard.addEventListener('click', () => {
@@ -72,7 +81,7 @@ const addToAvailableDom = (pokemon) => {
   const pokemonCard = document.createElement('article');
   pokemonCard.classList.add('card'); // För styling
   pokemonCard.innerHTML = `
-                  <img src="https://e7.pngegg.com/pngimages/476/159/png-clipart-pokemon-pikachu-pikachu-pokemon-games-pokemon-thumbnail.png" alt="Pikaaaaaaaaaa">
+                      <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
                       <header>
                           <h3>${pokemon.name}</h3>
                           <p>${pokemon.cp}</p>
