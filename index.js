@@ -57,7 +57,7 @@ const addToChosenDom = (pokemon) => {
   const pokemonCard = document.createElement('article');
   pokemonCard.classList.add('card'); // För styling
   pokemonCard.innerHTML = `
-                <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
+                    <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
                     <header>
                         <h3>${pokemon.name}</h3>
                         <p>${pokemon.cp}</p>
